@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="de" data-theme="green">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0b1713">
+<meta name="description" content="Stremy – ein unabhängiger Android-Client für Twitch-Livestreams mit persönlichen Stream-Ansichten, anpassbaren Themes und Live-Chat.">
+<meta property="og:title" content="Stremy – Dein Stream. Dein Style.">
+<meta property="og:description" content="Die alternative Android-App für deine Livestreams.">
+<title>Stremy — Dein Stream. Dein Style. · by JeryBeam</title>
+<style>
+:root{color-scheme:dark;--bg:#090f0d;--panel:#101b16;--panel2:#14241c;--line:#294135;--text:#f0fbf5;--muted:#a1baab;--accent:#82edaa;--accent-deep:#225a38;--glow:rgba(68,224,123,.2);--accent-text:#082113}
+html[data-theme="pink"]{--bg:#110d11;--panel:#201720;--panel2:#2a1c29;--line:#523548;--text:#fff2f9;--muted:#ccb1c5;--accent:#ff9acb;--accent-deep:#6a2d4e;--glow:rgba(255,112,174,.18);--accent-text:#351526}
+html[data-theme="violet"]{--bg:#100d16;--panel:#1a1627;--panel2:#252039;--line:#4c416a;--text:#f7f2ff;--muted:#bbb1d0;--accent:#bf9cff;--accent-deep:#593a81;--glow:rgba(177,128,255,.19);--accent-text:#211035}
+html[data-theme="cyan"]{--bg:#091318;--panel:#112028;--panel2:#182d36;--line:#31525c;--text:#effaff;--muted:#a6c1ca;--accent:#88e6fa;--accent-deep:#236278;--glow:rgba(100,215,241,.18);--accent-text:#092b35}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6;overflow-x:hidden}
+button,a{font:inherit}a{color:inherit}button{cursor:pointer}.container{width:min(1140px,calc(100% - 40px));margin-inline:auto}
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}.skip{position:absolute;top:-100px;left:15px;background:var(--accent);color:var(--accent-text);padding:12px;z-index:20}.skip:focus{top:10px}
+body::before{content:"";position:absolute;z-index:-1;top:70px;left:-310px;width:750px;height:650px;background:radial-gradient(ellipse,var(--glow),transparent 65%);pointer-events:none}
+body::after{content:"";position:absolute;z-index:-1;top:0;right:-350px;width:850px;height:950px;background:radial-gradient(ellipse,var(--glow),transparent 65%);pointer-events:none}
+header{position:sticky;top:0;z-index:15;background:color-mix(in srgb,var(--bg) 84%,transparent);backdrop-filter:blur(18px);border-bottom:1px solid color-mix(in srgb,var(--line) 50%,transparent)}
+nav.top{height:77px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none}.logo svg{width:43px;height:43px;color:var(--accent);filter:drop-shadow(0 0 12px var(--glow))}
+.logo strong{font-size:25px;letter-spacing:-1.5px;line-height:1}.logo em{font-style:normal;color:var(--accent)}.logo small{display:block;color:var(--muted);font-size:10px;font-weight:600;letter-spacing:2.4px;margin-top:5px}
+.navlinks{display:flex;gap:33px;align-items:center}.navlinks a{font-size:14px;text-decoration:none;color:var(--muted);font-weight:600}.navlinks a:hover,.navlinks a:focus-visible{color:var(--accent)}
+.nav-cta{border:1px solid var(--line);border-radius:13px;padding:9px 16px;text-decoration:none;font-size:13px;font-weight:750}.nav-cta:hover{border-color:var(--accent)}.mobile-menu{display:none;border:1px solid var(--line);border-radius:10px;background:var(--panel);color:var(--text);padding:9px 13px}
+.hero{min-height:680px;display:grid;grid-template-columns:1.03fr .97fr;align-items:center;gap:54px;padding-top:60px;padding-bottom:90px}
+.tag{font-size:12px;text-transform:uppercase;color:var(--accent);letter-spacing:2.4px;font-weight:800}.tag .dot{display:inline-block;vertical-align:middle;width:7px;height:7px;margin-right:9px;background:var(--accent);border-radius:50%;box-shadow:0 0 14px var(--accent)}
+h1,h2,h3,p{margin-top:0}h1{font-size:clamp(54px,6.2vw,89px);line-height:1.05;letter-spacing:-5px;margin:22px 0 26px;font-weight:850}h1 span,h2 span{color:var(--accent)}
+.hero-copy>p{max-width:520px;color:var(--muted);font-size:18px;line-height:1.8;margin-bottom:34px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:53px;padding:0 23px;border-radius:15px;text-decoration:none;font-weight:800;font-size:14px;transition:transform .2s,background .2s}.btn:hover{transform:translateY(-3px)}
+.primary{background:var(--accent);color:var(--accent-text);box-shadow:0 9px 32px var(--glow)}.secondary{background:var(--panel);border:1px solid var(--line)}.secondary:hover{border-color:var(--accent)}
+.benefits{display:flex;gap:20px;flex-wrap:wrap;margin-top:30px;color:var(--muted);font-size:12px}.benefits b{color:var(--accent);font-size:17px;margin-right:4px}
+.phone-area{position:relative;min-height:610px;display:flex;align-items:center;justify-content:center}
+.phone-area::before{content:"";position:absolute;inset:4% 0;background:radial-gradient(ellipse,var(--glow),transparent 65%);filter:blur(20px)}
+.phone{position:relative;width:285px;height:567px;padding:8px;border:3px solid #596a60;border-radius:44px;background:#050a08;box-shadow:0 44px 110px rgba(0,0,0,.6),0 0 0 9px rgba(199,255,214,.035);transform:rotate(6deg)}
+.phone-screen{height:100%;background:linear-gradient(180deg,var(--panel2),var(--bg) 55%);border-radius:34px;overflow:hidden;position:relative}
+.camera{position:absolute;top:16px;left:50%;transform:translateX(-50%);width:68px;height:16px;background:#050706;border-radius:14px;z-index:2}
+.status{display:flex;justify-content:space-between;padding:21px 21px 4px;font-size:10px;font-weight:750}
+.appbar{display:flex;justify-content:space-between;align-items:center;padding:13px 18px;color:var(--muted)}.appbar strong{font-size:24px;letter-spacing:-1.5px;color:var(--text)}
+.appbar strong span{color:var(--accent)}.app-banner{margin:8px 13px 12px;padding:19px 15px 18px;border-radius:17px;background:linear-gradient(120deg,var(--accent-deep),var(--panel2));border:1px solid var(--line)}
+.app-banner small{font-size:9px;letter-spacing:1.6px;color:var(--accent);font-weight:800}.app-banner h3{margin:7px 0 4px;font-size:20px;letter-spacing:-.5px}.app-banner p{font-size:10px;color:var(--muted);margin:0}
+.sort{display:flex;align-items:center;justify-content:space-between;background:var(--panel);padding:11px 12px;margin:0 9px 9px;border-radius:9px;color:var(--text);font-size:10px;font-weight:750}.sort span+span{color:var(--accent)}
+.streamgrid{display:grid;grid-template-columns:1fr 1fr;gap:9px;padding:0 9px}.stream{border:1px solid var(--line);background:var(--panel);overflow:hidden;border-radius:11px}
+.thumb{height:91px;position:relative;overflow:hidden;background:linear-gradient(145deg,#12382a 4%,#358369 30%,#103d58 67%,#070f2d)}
+.thumb.two{background:linear-gradient(135deg,#39264d,#c76d85 46%,#71326a 75%,#241034)}.thumb.three{background:linear-gradient(120deg,#233451,#2f7497,#171b37)}.thumb.four{background:linear-gradient(130deg,#55412a,#b18048,#271a20)}
+.thumb::after{content:"";width:112px;height:112px;position:absolute;left:-20px;top:13px;border:16px solid rgba(255,255,255,.06);border-radius:50%}
+.live{position:absolute;top:7px;left:7px;color:white;background:#e23459;font-size:7px;padding:2px 5px;border-radius:4px;letter-spacing:.4px;font-weight:850}
+.avatar{position:absolute;top:7px;right:7px;width:29px;height:29px;border-radius:50%;border:2px solid white;background:linear-gradient(140deg,#9deac5,#126a4c)}
+.two .avatar{background:linear-gradient(135deg,#ffd0ed,#e35b8f)}.three .avatar{background:linear-gradient(135deg,#9edffe,#395ac6)}.four .avatar{background:linear-gradient(135deg,#ffcc8a,#8d5738)}
+.meta{padding:8px 9px}.meta strong{display:block;font-size:10px}.meta small{display:block;font-size:8px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.phonebottom{position:absolute;bottom:9px;left:27%;width:46%;height:4px;background:var(--text);border-radius:6px;opacity:.6}
+.float-note{position:absolute;z-index:2;background:color-mix(in srgb,var(--panel2) 93%,transparent);border:1px solid var(--line);padding:12px 17px;box-shadow:0 14px 50px rgba(0,0,0,.3);border-radius:13px;font-size:12px;font-weight:800;backdrop-filter:blur(12px)}
+.float-note.one{top:120px;left:1%;transform:rotate(-8deg)}.float-note.two{right:0;bottom:125px;transform:rotate(6deg)}.float-note span{color:var(--accent);margin-right:7px}
+.caption{text-align:center;color:var(--muted);font-size:10px;position:absolute;bottom:4px;right:20%;left:20%}
+section.block{padding:92px 0}h2{font-size:clamp(37px,4.2vw,58px);letter-spacing:-2.5px;line-height:1.12;margin:12px 0 17px}.section-lead{color:var(--muted);max-width:520px;font-size:16px}
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.feature{padding:27px;background:linear-gradient(165deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:25px;min-height:235px;transition:border-color .2s,transform .2s}.feature:hover{border-color:var(--accent);transform:translateY(-4px)}
+.feature-icon{display:inline-grid;place-items:center;background:var(--accent-deep);width:45px;height:45px;color:var(--accent);border-radius:14px;font-size:23px;margin-bottom:19px}.feature h3{font-size:20px;letter-spacing:-.5px;margin-bottom:7px}.feature p{color:var(--muted);font-size:14px;line-height:1.8;margin:0}
+.feature.big{grid-column:span 2;background:radial-gradient(ellipse at right bottom,var(--glow),transparent 80%),var(--panel);}.view-modes{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}.view-modes span{font-size:12px;padding:6px 11px;border:1px solid var(--line);border-radius:9px;color:var(--muted)}.view-modes .active{color:var(--accent);border-color:var(--accent)}
+.theme-zone{background:linear-gradient(180deg,var(--panel),transparent);border-block:1px solid var(--line)}
+.theme-layout{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;padding-block:95px}
+.swatches{display:flex;gap:13px;margin:27px 0 13px}.swatch{border:3px solid transparent;outline:2px solid transparent;width:45px;height:45px;border-radius:50%;transition:transform .2s}.swatch:hover{transform:scale(1.1)}.swatch[aria-pressed="true"]{outline-color:var(--text);outline-offset:4px}.swatch[data-theme="green"]{background:#82edaa}.swatch[data-theme="pink"]{background:#ff9acb}.swatch[data-theme="violet"]{background:#bf9cff}.swatch[data-theme="cyan"]{background:#88e6fa}
+.theme-name{color:var(--muted);font-size:13px}.theme-card{margin:auto;max-width:390px;border-radius:35px;background:linear-gradient(150deg,var(--accent-deep),var(--panel2) 75%);padding:32px;border:1px solid var(--line);box-shadow:0 20px 65px var(--glow);transform:rotate(4deg)}.theme-card small{letter-spacing:2px;font-weight:850;color:var(--accent)}.theme-card .planet{display:grid;place-items:center;width:78px;height:78px;margin:33px auto 25px;border-radius:23px;background:var(--accent);color:var(--accent-text);font-size:40px}.theme-card h3{font-size:30px;letter-spacing:-1.3px;margin-bottom:9px}.theme-card p{color:var(--muted);margin-bottom:0}
+.download-card{margin-top:35px;background:linear-gradient(120deg,var(--panel2),var(--panel));border:1px solid var(--line);padding:35px;border-radius:30px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.download-card strong{display:block;font-size:25px;letter-spacing:-.6px}.download-card p{font-size:14px;color:var(--muted);margin:7px 0 0;max-width:570px}
+.download-state{font-size:11px;font-weight:800;color:var(--accent);letter-spacing:.9px}.download-locked{background:var(--line);border-radius:14px;color:var(--text);font-size:14px;padding:15px 19px;font-weight:800;white-space:nowrap;cursor:not-allowed}
+.download-notice{font-size:13px;color:var(--muted);padding:18px 2px 0}
+.faq{max-width:790px;margin:35px auto 0}.faq details{border-bottom:1px solid var(--line);padding:22px 5px}.faq summary{list-style:none;cursor:pointer;font-weight:750;font-size:16px;display:flex;align-items:center;justify-content:space-between;gap:20px}.faq summary::-webkit-details-marker{display:none}.faq summary::after{content:"+";font-size:23px;color:var(--accent)}.faq details[open] summary::after{content:"−"}.faq details p{margin:12px 32px 0 0;color:var(--muted);font-size:14px}
+footer{border-top:1px solid var(--line);margin-top:70px;padding:35px 0 50px}.footer-inner{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:17px}.footer-inner p{color:var(--muted);font-size:12px;margin:5px 0 0}.footer-links{display:flex;gap:23px;flex-wrap:wrap}.footer-links a{font-size:12px;color:var(--muted)}.footer-links a:hover{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+@media(max-width:930px){.hero{gap:10px}.phone-area{transform:scale(.87)}.navlinks{gap:18px}.feature-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:710px){nav.top{height:68px}.navlinks,.nav-cta{display:none}.mobile-menu{display:block}.mobilelinks{display:flex;flex-direction:column;padding:10px 20px 20px;gap:7px;border-top:1px solid var(--line)}.mobilelinks[hidden]{display:none}.mobilelinks a{text-decoration:none;padding:10px 0;color:var(--muted)}.hero{grid-template-columns:1fr;text-align:left;padding-top:56px;padding-bottom:35px;min-height:unset}.hero-copy>p{font-size:16px}h1{letter-spacing:-3.5px}.phone-area{min-height:560px;transform:scale(.83);margin:-25px -30px 0}.float-note.one{left:7%}.float-note.two{right:3%}.feature-grid{grid-template-columns:1fr}.feature.big{grid-column:span 1}.theme-layout{grid-template-columns:1fr;gap:45px;padding-block:70px}.theme-card{transform:rotate(2deg)}section.block{padding:70px 0}.download-card{flex-direction:column;align-items:start;padding:28px}.download-locked{white-space:normal}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+</style>
+</head>
+<body>
+<a href="#main" class="skip">Zum Inhalt springen</a>
+<header>
+<nav class="top container" aria-label="Hauptnavigation">
+<a href="#top" class="logo" aria-label="Stremy Start">
+<svg viewBox="0 0 72 72" fill="none" aria-hidden="true"><path d="M30 38 15 66h42L42 38" fill="currentColor" opacity=".18"/><path d="m30 38-15 28m27-28 15 28" stroke="currentColor" stroke-width="2"/><ellipse cx="36" cy="32" rx="25" ry="10" fill="currentColor"/><path d="M23 31c1-13 7-19 13-19s12 6 13 19" fill="#0d1812" stroke="currentColor" stroke-width="2.7"/><ellipse cx="36" cy="32" rx="25" ry="10" stroke="#d8ffe8" stroke-width="2.7"/><circle cx="23" cy="33" r="2" fill="#092014"/><circle cx="36" cy="35" r="2" fill="#092014"/><circle cx="49" cy="33" r="2" fill="#092014"/></svg>
+<span><strong>stremy<em>.</em></strong><small>BY JERYBEAM</small></span>
+</a>
+<div class="navlinks"><a href="#features">Funktionen</a><a href="#themes">Design</a><a href="#download">Download</a><a href="#faq">FAQ</a></div>
+<a class="nav-cta" href="#download">App entdecken ↗</a>
+<button class="mobile-menu" type="button" aria-controls="mobilelinks" aria-expanded="false">☰ <span class="sr-only">Menü</span></button>
+</nav>
+<div id="mobilelinks" class="mobilelinks" hidden><a href="#features">Funktionen</a><a href="#themes">Design</a><a href="#download">Download</a><a href="#faq">FAQ</a></div>
+</header>
+<main id="main">
+<section class="hero container" id="top">
+<div class="hero-copy">
+<div class="tag"><span class="dot"></span> STREMY 1.1.0 · ANDROID</div>
+<h1>Dein Stream.<br><span>Dein Style.</span></h1>
+<p>Deine Lieblingsstreams, dein Look, dein Erlebnis. Entdecke Stremy – einen unabhängigen Twitch-Client für Android, bei dem du entscheidest, wie deine Streams aussehen.</p>
+<div class="actions"><a class="btn primary" href="#download">↓ &nbsp; Download-Status</a><a class="btn secondary" href="#features">Funktionen entdecken ↗</a></div>
+<div class="benefits"><span><b>✓</b> Android</span><span><b>✓</b> Anpassbare Themes</span><span><b>✓</b> Open-Source-Basis</span></div>
+</div>
+<div class="phone-area">
+<div class="float-note one"><span>✦</span> Deine Farben</div>
+<div class="float-note two"><span>♥</span> Deine Streams</div>
+<div class="phone"><div class="camera"></div><div class="phone-screen">
+<div class="status"><span>9:41</span><span>●●◕ ▰</span></div>
+<div class="appbar"><span>☰</span><strong>stremy<span>.</span></strong><span>⌕</span></div>
+<div class="app-banner"><small>DEIN STARTBILDSCHIRM</small><h3>Meine Streams ♡</h3><p>Alles, was du liebst. Auf einen Blick.</p></div>
+<div class="sort"><span>♥ &nbsp; Meine Streams</span><span>3 &nbsp; <b>2</b> &nbsp; ☷ &nbsp; ⚙</span></div>
+<div class="streamgrid">
+<div class="stream"><div class="thumb"><span class="live">LIVE</span><span class="avatar"></span></div><div class="meta"><strong>PixelOrbit</strong><small>Gaming & Chill</small></div></div>
+<div class="stream"><div class="thumb two"><span class="live">LIVE</span><span class="avatar"></span></div><div class="meta"><strong>Moonlight</strong><small>Just chatting ✦</small></div></div>
+<div class="stream"><div class="thumb three"><span class="live">LIVE</span><span class="avatar"></span></div><div class="meta"><strong>Starwave</strong><small>Neue Welten</small></div></div>
+<div class="stream"><div class="thumb four"><span class="live">LIVE</span><span class="avatar"></span></div><div class="meta"><strong>NeonByte</strong><small>Heute wird gezockt</small></div></div>
+</div><div class="phonebottom"></div>
+</div></div>
+<div class="caption">Illustrative UI-Vorschau · keine echten Twitch-Inhalte</div>
+</div>
+</section>
+<section class="block container" id="features">
+<div class="tag">WAS STREMY KANN</div><h2>Weniger suchen.<br><span>Mehr erleben.</span></h2><p class="section-lead">Deine Streams im Mittelpunkt – und die Freiheit, Stremy an dich anzupassen.</p>
+<div class="feature-grid">
+<article class="feature big"><span class="feature-icon">♡</span><h3>Meine Streams. Mein Ding.</h3><p>Gefolgte Livestreams im eigenen Bereich, mit Pins für die Kanäle, die du nicht verpassen willst.</p><div class="view-modes"><span>▦ 3 Spalten</span><span class="active">▦ 2 Spalten</span><span>☷ Liste</span></div></article>
+<article class="feature"><span class="feature-icon">◈</span><h3>Dein Theme</h3><p>Wähle den Look, der zu dir passt. Grün, Rosa, Violett und weitere Farben.</p></article>
+<article class="feature"><span class="feature-icon">▣</span><h3>Bild-in-Bild</h3><p>Sieh deinen Stream weiter, während du andere Apps verwendest.</p></article>
+<article class="feature"><span class="feature-icon">♫</span><h3>Audio-Modus</h3><p>Für Momente, in denen du lieber zuhörst, statt aufs Display zu schauen.</p></article>
+<article class="feature"><span class="feature-icon">◌</span><h3>Live-Chat</h3><p>Verfolge die Unterhaltung und schreibe direkt im Stream-Chat mit.</p></article>
+<article class="feature"><span class="feature-icon">✧</span><h3>Modernes Design</h3><p>Runde Karten, kompakte Ansichten und individuell einstellbare Details.</p></article>
+</div></section>
+<section class="theme-zone" id="themes"><div class="theme-layout container">
+<div><div class="tag">DEINE FARBEN</div><h2>Heute Grün.<br><span>Morgen Rosa.</span></h2><p class="section-lead">Stremy macht den Look zu deiner Entscheidung. Teste hier das Farbgefühl der Webseite.</p>
+<div class="swatches" role="group" aria-label="Theme auswählen">
+<button class="swatch" data-theme="green" aria-label="Waldgrün" aria-pressed="true"></button>
+<button class="swatch" data-theme="pink" aria-label="Rosa" aria-pressed="false"></button>
+<button class="swatch" data-theme="violet" aria-label="Violett" aria-pressed="false"></button>
+<button class="swatch" data-theme="cyan" aria-label="Cyan" aria-pressed="false"></button>
+</div><span class="theme-name" aria-live="polite">Aktives Theme: Waldgrün</span></div>
+<div class="theme-card"><small>PERSONALISIERE DEINEN LOOK</small><div class="planet">✦</div><h3>Du entscheidest.</h3><p>Ein neues Theme, ein neues Gefühl – ohne auf deine Lieblingsstreams zu verzichten.</p></div>
+</div></section>
+<section class="block container" id="download">
+<div class="tag">DEIN NÄCHSTER STREAM WARTET</div><h2>Stremy <span>1.1.0</span></h2><p class="section-lead">Die offiziell signierte Stremy 1.1.0 für Android steht jetzt zum Download bereit. Kostenlos und mit offenem Quellcode.</p>
+<div class="download-card"><div><div class="download-state">● VERSION 1.1.0 VERFÜGBAR</div><strong>Stremy für Android</strong><p>Offizieller, mit unserem Release-Schlüssel signierter APK-Build. Direkt von GitHub Releases.</p></div><a class="btn primary" href="https://github.com/jeremonienmaster/Stremy-Website/releases/download/v1.1.0/Stremy-v1.1.0.apk" rel="noopener noreferrer" aria-label="Stremy 1.1.0 APK herunterladen">APK herunterladen ↓</a></div>
+<p class="download-notice">Installiere APK-Dateien nur aus vertrauenswürdigen Quellen. Schutzmeldungen von Android oder Google Play Protect solltest du prüfen und nicht einfach deaktivieren. <a href="https://github.com/jeremonienmaster/Stremy-Website/releases/download/v1.1.0/Stremy-v1.1.0-source.zip">Quellcode (GPL-3.0) ↓</a> · <a href="datenschutz.html">Datenschutz & Technik</a></p>
+</section>
+<section class="block container" id="faq"><div style="text-align:center"><div class="tag">GUT ZU WISSEN</div><h2>Häufige <span>Fragen.</span></h2></div>
+<div class="faq">
+<details><summary>Was ist Stremy?</summary><p>Stremy ist ein unabhängiger Android-Client zum Ansehen von Twitch-Livestreams. Die App baut auf dem Open-Source-Projekt Twire auf und wird unter eigenem Namen weiterentwickelt.</p></details>
+<details><summary>Ist Stremy offiziell von Twitch?</summary><p>Nein. Stremy ist ein unabhängiges Projekt und weder ein offizielles Twitch-Produkt noch von Twitch unterstützt oder autorisiert.</p></details>
+<details><summary>Ist Stremy kostenlos?</summary><p>Ja. Stremy 1.1.0 kann kostenlos als Android-APK heruntergeladen werden.</p></details>
+<details><summary>Auf welchen Geräten läuft Stremy?</summary><p>Die Android-App ist für Android 5.0 und neuer konfiguriert. Die tatsächliche Kompatibilität kann je nach Gerät, Android-Version und Stream variieren.</p></details>
+<details><summary>Wo finde ich den Quellcode?</summary><p>Der zur APK gehörende Quellcode steht gemäß GPL-3.0 als ZIP-Datei direkt neben dem APK-Download zur Verfügung. Die Entwicklungs-Historie bleibt privat.</p></details>
+<details><summary>Kann ich Stremy über eine ältere Beta installieren?</summary><p>Die offizielle App und die Beta besitzen unterschiedliche Android-Paketkennungen. Beide können nebeneinander bestehen; Daten und Einstellungen werden nicht automatisch übertragen.</p></details>
+<details><summary>Welche Daten nutzt Stremy?</summary><p>Zum Anzeigen und Interagieren mit Livestreams kommuniziert die App mit Twitch-Diensten. Bei aktivierter Fehlerberichterstattung können Diagnoseberichte an einen GlitchTip/Sentry-Endpunkt gesendet werden. Mehr dazu in den <a href="datenschutz.html">technischen Datenschutzhinweisen</a>. Diese Webseite enthält keine Tracking-Skripte.</p></details>
+<details><summary>Ist Stremy Open Source?</summary><p>Stremy basiert auf Twire und dessen GPL-3.0-lizenziertem Code. Der Quellcode zum Release und die Lizenzhinweise stehen <a href="https://github.com/jeremonienmaster/Stremy-Website/releases/download/v1.1.0/Stremy-v1.1.0-source.zip">als GPL-3.0-Quellcodearchiv</a> bereit.</p></details>
+</div></section>
+</main>
+<footer><div class="footer-inner container"><div><strong>stremy<span style="color:var(--accent)">.</span> <span style="font-size:12px;color:var(--muted)">by JeryBeam</span></strong><p>Ein unabhängiges Community-Projekt. Nicht mit Twitch verbunden.</p></div><div class="footer-links"><a href="#download">Download</a><a href="#faq">FAQ</a><a href="datenschutz.html">Datenschutz</a><a href="https://www.gnu.org/licenses/gpl-3.0.html" rel="noopener noreferrer">GPL-3.0</a><a href="#top">Nach oben ↑</a></div></div></footer>
+<script>
+(()=>{'use strict';
+const root=document.documentElement;
+const names={green:'Waldgrün',pink:'Rosa',violet:'Violett',cyan:'Cyan'};
+const buttons=[...document.querySelectorAll('.swatch[data-theme]')];
+const display=document.querySelector('.theme-name');
+function choose(theme){if(!names[theme])return;root.dataset.theme=theme;buttons.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.theme===theme)));display.textContent='Aktives Theme: '+names[theme];document.querySelector('meta[name="theme-color"]').setAttribute('content',theme==='green'?'#0b1713':theme==='pink'?'#110d11':theme==='violet'?'#100d16':'#091318');try{localStorage.setItem('stremy-theme',theme)}catch{}}
+buttons.forEach(button=>button.addEventListener('click',()=>choose(button.dataset.theme)));
+try{const saved=localStorage.getItem('stremy-theme');if(saved&&names[saved])choose(saved)}catch{}
+const menu=document.querySelector('.mobile-menu'),links=document.querySelector('.mobilelinks');
+menu.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')==='true';menu.setAttribute('aria-expanded',String(!open));links.hidden=open});
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.hidden=true;menu.setAttribute('aria-expanded','false')}));
+})();
+</script>
+</body></html>
