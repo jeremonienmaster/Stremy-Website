@@ -1,0 +1,84 @@
+name: "🐛 Fehlerbericht für Stremy"
+description: "Melde einen Fehler in der offiziellen Stremy-App. Wir sammeln die Details direkt als GitHub-Issue."
+title: "[Bug] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Danke, dass du Stremy besser machst! 💚
+        
+        Deine Meldung wird als **öffentliches GitHub-Issue** gespeichert.
+        Bitte **niemals** Passwörter, Twitch-Tokens, Cookies, E-Mail-Adressen,
+        private Chatnachrichten oder ungeschwärzte Logdateien hochladen.
+        Du benötigst ein GitHub-Konto, um den Bericht abzusenden.
+  - type: dropdown
+    id: bereich
+    attributes:
+      label: "Wo tritt der Fehler auf?"
+      options:
+        - "Meine Streams / Favoriten / Pins"
+        - "Top-Streams / Top-Spiele / Suche"
+        - "Videoplayer / Qualität / PiP / Audio"
+        - "Twitch-Login / Chat"
+        - "Design / Themes / Darstellung"
+        - "App startet nicht / Absturz"
+        - "Update / Installation"
+        - "Sonstiges"
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: "Stremy-Version"
+      description: "Steht in den App-Einstellungen. Bei fehlender Angabe gerne 1.1.0 eintragen."
+      placeholder: "z. B. 1.1.0"
+    validations:
+      required: true
+  - type: input
+    id: geraet
+    attributes:
+      label: "Gerät und Android-Version"
+      placeholder: "z. B. Samsung Galaxy S23 Ultra, Android 16"
+    validations:
+      required: true
+  - type: textarea
+    id: reproduktion
+    attributes:
+      label: "Wie lässt sich der Fehler auslösen?"
+      description: "Beschreibe die einzelnen Schritte, damit wir den Fehler nachvollziehen können."
+      placeholder: |
+        1. App starten
+        2. „Meine Streams“ öffnen
+        3. ...
+      render: markdown
+    validations:
+      required: true
+  - type: textarea
+    id: passiert
+    attributes:
+      label: "Was passiert tatsächlich?"
+      placeholder: "Die App schließt sich / die Liste bleibt leer / ..."
+    validations:
+      required: true
+  - type: textarea
+    id: erwartet
+    attributes:
+      label: "Was sollte stattdessen passieren?"
+      placeholder: "Die Liste sollte unmittelbar neu angezeigt werden."
+    validations:
+      required: true
+  - type: textarea
+    id: anhang
+    attributes:
+      label: "Weitere Hinweise, Screenshots oder Video (optional)"
+      description: "Screenshots oder Videos lassen sich in das Feld ziehen. Bitte persönliche Informationen unkenntlich machen."
+      placeholder: "Passiert der Fehler immer oder nur manchmal?"
+    validations:
+      required: false
+  - type: checkboxes
+    id: datenschutz
+    attributes:
+      label: "Datenschutz"
+      options:
+        - label: "Mein Bericht enthält keine Passwörter, Zugangstokens oder anderen persönlichen Daten, die nicht öffentlich werden sollen."
+          required: true
