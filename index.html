@@ -94,7 +94,7 @@ footer{border-top:1px solid var(--line);margin-top:70px;padding:35px 0 50px}.foo
 <main id="main">
 <section class="hero container" id="top">
 <div class="hero-copy">
-<div class="tag"><span class="dot"></span> STREMY 1.1.0 · ANDROID</div>
+<div class="tag"><span class="dot"></span> STREMY <span data-release-version>1.1.0</span> · ANDROID</div>
 <h1>Dein Stream.<br><span>Dein Style.</span></h1>
 <p>Deine Lieblingsstreams, dein Look, dein Erlebnis. Entdecke Stremy – einen unabhängigen Twitch-Client für Android, bei dem du entscheidest, wie deine Streams aussehen.</p>
 <div class="actions"><a class="btn primary" href="#download">↓ &nbsp; Download-Status</a><a class="btn secondary" href="#features">Funktionen entdecken ↗</a></div>
@@ -139,20 +139,20 @@ footer{border-top:1px solid var(--line);margin-top:70px;padding:35px 0 50px}.foo
 <div class="theme-card"><small>PERSONALISIERE DEINEN LOOK</small><div class="planet">✦</div><h3>Du entscheidest.</h3><p>Ein neues Theme, ein neues Gefühl – ohne auf deine Lieblingsstreams zu verzichten.</p></div>
 </div></section>
 <section class="block container" id="download">
-<div class="tag">DEIN NÄCHSTER STREAM WARTET</div><h2>Stremy <span>1.1.0</span></h2><p class="section-lead">Die offiziell signierte Stremy 1.1.0 für Android steht jetzt zum Download bereit. Kostenlos und mit offenem Quellcode.</p>
-<div class="download-card"><div><div class="download-state">● VERSION 1.1.0 VERFÜGBAR</div><strong>Stremy für Android</strong><p>Offizieller, mit unserem Release-Schlüssel signierter APK-Build. Direkt von GitHub Releases.</p></div><a class="btn primary" href="https://github.com/jeremonienmaster/Stremy-Website/releases/download/v1.1.0/Stremy-v1.1.0.apk" rel="noopener noreferrer" aria-label="Stremy 1.1.0 APK herunterladen">APK herunterladen ↓</a></div>
-<p class="download-notice">Installiere APK-Dateien nur aus vertrauenswürdigen Quellen. Schutzmeldungen von Android oder Google Play Protect solltest du prüfen und nicht einfach deaktivieren. <a href="https://github.com/jeremonienmaster/Stremy-Website/releases/download/v1.1.0/Stremy-v1.1.0-source.zip">Quellcode (GPL-3.0) ↓</a> · <a href="datenschutz.html">Datenschutz & Technik</a></p>
+<div class="tag">DEIN NÄCHSTER STREAM WARTET</div><h2>Stremy <span data-release-version>1.1.0</span></h2><p class="section-lead">Die offiziell signierte Stremy-Version <strong data-release-version>1.1.0</strong> für Android steht zum Download bereit. Kostenlos und mit offenem Quellcode.</p>
+<div class="download-card"><div><div class="download-state">● VERSION <span data-release-version>1.1.0</span> VERFÜGBAR</div><strong>Stremy für Android</strong><p>Offizieller, mit unserem Release-Schlüssel signierter APK-Build. Direkt von GitHub Releases.</p></div><a class="btn primary" id="stremy-apk-download" href="https://github.com/jeremonienmaster/Stremy-Website/releases/download/v1.1.0/Stremy-v1.1.0.apk" rel="noopener noreferrer" aria-label="Stremy 1.1.0 APK herunterladen">APK herunterladen ↓</a></div>
+<p class="download-notice">Installiere APK-Dateien nur aus vertrauenswürdigen Quellen. Schutzmeldungen von Android oder Google Play Protect solltest du prüfen und nicht einfach deaktivieren. <a id="stremy-source-download" href="https://github.com/jeremonienmaster/Stremy-Website/releases/download/v1.1.0/Stremy-v1.1.0-source.zip">Quellcode (GPL-3.0) ↓</a> · <a href="datenschutz.html">Datenschutz & Technik</a> · <a href="https://github.com/jeremonienmaster/Stremy-Website/releases/latest" rel="noopener noreferrer">Neueste Version auf GitHub ↗</a></p>
 </section>
 <section class="block container" id="faq"><div style="text-align:center"><div class="tag">GUT ZU WISSEN</div><h2>Häufige <span>Fragen.</span></h2></div>
 <div class="faq">
 <details><summary>Was ist Stremy?</summary><p>Stremy ist ein unabhängiger Android-Client zum Ansehen von Twitch-Livestreams. Die App baut auf dem Open-Source-Projekt Twire auf und wird unter eigenem Namen weiterentwickelt.</p></details>
 <details><summary>Ist Stremy offiziell von Twitch?</summary><p>Nein. Stremy ist ein unabhängiges Projekt und weder ein offizielles Twitch-Produkt noch von Twitch unterstützt oder autorisiert.</p></details>
-<details><summary>Ist Stremy kostenlos?</summary><p>Ja. Stremy 1.1.0 kann kostenlos als Android-APK heruntergeladen werden.</p></details>
+<details><summary>Ist Stremy kostenlos?</summary><p>Ja. Die jeweils aktuelle Stremy-Version kann kostenlos als Android-APK heruntergeladen werden.</p></details>
 <details><summary>Auf welchen Geräten läuft Stremy?</summary><p>Die Android-App ist für Android 5.0 und neuer konfiguriert. Die tatsächliche Kompatibilität kann je nach Gerät, Android-Version und Stream variieren.</p></details>
 <details><summary>Wo finde ich den Quellcode?</summary><p>Der zur APK gehörende Quellcode steht gemäß GPL-3.0 als ZIP-Datei direkt neben dem APK-Download zur Verfügung. Die Entwicklungs-Historie bleibt privat.</p></details>
 <details><summary>Kann ich Stremy über eine ältere Beta installieren?</summary><p>Die offizielle App und die Beta besitzen unterschiedliche Android-Paketkennungen. Beide können nebeneinander bestehen; Daten und Einstellungen werden nicht automatisch übertragen.</p></details>
-<details><summary>Welche Daten nutzt Stremy?</summary><p>Zum Anzeigen und Interagieren mit Livestreams kommuniziert die App mit Twitch-Diensten. Bei aktivierter Fehlerberichterstattung können Diagnoseberichte an einen GlitchTip/Sentry-Endpunkt gesendet werden. Mehr dazu in den <a href="datenschutz.html">technischen Datenschutzhinweisen</a>. Diese Webseite enthält keine Tracking-Skripte.</p></details>
-<details><summary>Ist Stremy Open Source?</summary><p>Stremy basiert auf Twire und dessen GPL-3.0-lizenziertem Code. Der Quellcode zum Release und die Lizenzhinweise stehen <a href="https://github.com/jeremonienmaster/Stremy-Website/releases/download/v1.1.0/Stremy-v1.1.0-source.zip">als GPL-3.0-Quellcodearchiv</a> bereit.</p></details>
+<details><summary>Welche Daten nutzt Stremy?</summary><p>Zum Anzeigen und Interagieren mit Livestreams kommuniziert die App mit Twitch-Diensten. Bei aktivierter Fehlerberichterstattung können Diagnoseberichte an einen GlitchTip/Sentry-Endpunkt gesendet werden. Mehr dazu in den <a href="datenschutz.html">technischen Datenschutzhinweisen</a>. Diese Webseite enthält keine Tracking-Skripte. Zur Ermittlung der neuesten freigegebenen Version wird die öffentliche GitHub-Releases-API abgefragt.</p></details>
+<details><summary>Ist Stremy Open Source?</summary><p>Stremy basiert auf Twire und dessen GPL-3.0-lizenziertem Code. Der Quellcode zum Release und die Lizenzhinweise stehen <a id="stremy-source-faq" href="https://github.com/jeremonienmaster/Stremy-Website/releases/download/v1.1.0/Stremy-v1.1.0-source.zip">als GPL-3.0-Quellcodearchiv</a> bereit.</p></details>
 </div></section>
 </main>
 <footer><div class="footer-inner container"><div><strong>stremy<span style="color:var(--accent)">.</span> <span style="font-size:12px;color:var(--muted)">by JeryBeam</span></strong><p>Ein unabhängiges Community-Projekt. Nicht mit Twitch verbunden.</p></div><div class="footer-links"><a href="#download">Download</a><a href="#faq">FAQ</a><a href="datenschutz.html">Datenschutz</a><a href="https://www.gnu.org/licenses/gpl-3.0.html" rel="noopener noreferrer">GPL-3.0</a><a href="#top">Nach oben ↑</a></div></div></footer>
@@ -168,6 +168,43 @@ try{const saved=localStorage.getItem('stremy-theme');if(saved&&names[saved])choo
 const menu=document.querySelector('.mobile-menu'),links=document.querySelector('.mobilelinks');
 menu.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')==='true';menu.setAttribute('aria-expanded',String(!open));links.hidden=open});
 links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.hidden=true;menu.setAttribute('aria-expanded','false')}));
+
+/* Nur freigegebene Stremy-Releases mit APK UND GPL-Quellcode sind nutzbar.
+   Wenn GitHub nicht antwortet, bleibt der funktionierende 1.1.0-Link erhalten. */
+async function refreshLatestStremyRelease() {
+  try {
+    const response=await fetch('https://api.github.com/repos/jeremonienmaster/Stremy-Website/releases/latest', {
+      headers:{'Accept':'application/vnd.github+json'}
+    });
+    if(!response.ok)return;
+    const release=await response.json();
+    if(release.draft || release.prerelease || !Array.isArray(release.assets))return;
+    const version=/^v?(\d+\.\d+\.\d+)$/.exec(release.tag_name||'')?.[1];
+    if(!version)return;
+    const apkName='Stremy-v'+version+'.apk';
+    const sourceName='Stremy-v'+version+'-source.zip';
+    const apk=release.assets.find(asset=>asset.name===apkName);
+    const source=release.assets.find(asset=>asset.name===sourceName);
+    if(!apk || !source)return;
+    const trustedPrefix='https://github.com/jeremonienmaster/Stremy-Website/releases/download/';
+    const isTrusted=asset=>typeof asset.browser_download_url==='string' &&
+      asset.browser_download_url.startsWith(trustedPrefix) &&
+      asset.browser_download_url.split('/').pop()===asset.name;
+    if(!isTrusted(apk) || !isTrusted(source))return;
+    const apkLink=document.getElementById('stremy-apk-download');
+    const sourceLink=document.getElementById('stremy-source-download');
+    const faqSource=document.getElementById('stremy-source-faq');
+    if(!apkLink || !sourceLink || !faqSource)return;
+    apkLink.href=apk.browser_download_url;
+    apkLink.setAttribute('aria-label','Stremy '+version+' APK herunterladen');
+    sourceLink.href=source.browser_download_url;
+    faqSource.href=source.browser_download_url;
+    document.querySelectorAll('[data-release-version]').forEach(el=>{el.textContent=version});
+  } catch {
+    // Kein Netz / GitHub-API-Limit: Statischer Download bleibt erhalten.
+  }
+}
+refreshLatestStremyRelease();
 })();
 </script>
 </body></html>
