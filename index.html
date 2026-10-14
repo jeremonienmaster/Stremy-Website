@@ -85,11 +85,11 @@ footer{border-top:1px solid var(--line);margin-top:70px;padding:35px 0 50px}.foo
 <svg viewBox="0 0 72 72" fill="none" aria-hidden="true"><path d="M30 38 15 66h42L42 38" fill="currentColor" opacity=".18"/><path d="m30 38-15 28m27-28 15 28" stroke="currentColor" stroke-width="2"/><ellipse cx="36" cy="32" rx="25" ry="10" fill="currentColor"/><path d="M23 31c1-13 7-19 13-19s12 6 13 19" fill="#0d1812" stroke="currentColor" stroke-width="2.7"/><ellipse cx="36" cy="32" rx="25" ry="10" stroke="#d8ffe8" stroke-width="2.7"/><circle cx="23" cy="33" r="2" fill="#092014"/><circle cx="36" cy="35" r="2" fill="#092014"/><circle cx="49" cy="33" r="2" fill="#092014"/></svg>
 <span><strong>stremy<em>.</em></strong><small>BY JERYBEAM</small></span>
 </a>
-<div class="navlinks"><a href="#features">Funktionen</a><a href="#themes">Design</a><a href="#download">Download</a><a href="#faq">FAQ</a></div>
+<div class="navlinks"><a href="#features">Funktionen</a><a href="#themes">Design</a><a href="#download">Download</a><a href="#feedback">Fehler melden</a><a href="#faq">FAQ</a></div>
 <a class="nav-cta" href="#download">App entdecken ↗</a>
 <button class="mobile-menu" type="button" aria-controls="mobilelinks" aria-expanded="false">☰ <span class="sr-only">Menü</span></button>
 </nav>
-<div id="mobilelinks" class="mobilelinks" hidden><a href="#features">Funktionen</a><a href="#themes">Design</a><a href="#download">Download</a><a href="#faq">FAQ</a></div>
+<div id="mobilelinks" class="mobilelinks" hidden><a href="#features">Funktionen</a><a href="#themes">Design</a><a href="#download">Download</a><a href="#feedback">Fehler melden</a><a href="#faq">FAQ</a></div>
 </header>
 <main id="main">
 <section class="hero container" id="top">
@@ -143,6 +143,20 @@ footer{border-top:1px solid var(--line);margin-top:70px;padding:35px 0 50px}.foo
 <div class="download-card"><div><div class="download-state">● VERSION <span data-release-version>1.1.0</span> VERFÜGBAR</div><strong>Stremy für Android</strong><p>Offizieller, mit unserem Release-Schlüssel signierter APK-Build. Direkt von GitHub Releases.</p></div><a class="btn primary" id="stremy-apk-download" href="https://github.com/jeremonienmaster/Stremy-Website/releases/download/v1.1.0/Stremy-v1.1.0.apk" rel="noopener noreferrer" aria-label="Stremy 1.1.0 APK herunterladen">APK herunterladen ↓</a></div>
 <p class="download-notice">Installiere APK-Dateien nur aus vertrauenswürdigen Quellen. Schutzmeldungen von Android oder Google Play Protect solltest du prüfen und nicht einfach deaktivieren. <a id="stremy-source-download" href="https://github.com/jeremonienmaster/Stremy-Website/releases/download/v1.1.0/Stremy-v1.1.0-source.zip">Quellcode (GPL-3.0) ↓</a> · <a href="datenschutz.html">Datenschutz & Technik</a> · <a href="https://github.com/jeremonienmaster/Stremy-Website/releases/latest" rel="noopener noreferrer">Neueste Version auf GitHub ↗</a></p>
 </section>
+<section class="block container" id="feedback" aria-labelledby="feedback-title">
+<div class="tag">STREMY GEMEINSAM VERBESSERN</div>
+<h2 id="feedback-title">Einen Bug <span>gefunden?</span></h2>
+<p class="section-lead">Ein Stream lädt nicht, ein Button reagiert nicht oder die App stürzt ab? Melde uns das Problem über unser strukturiertes Fehlerformular. So können wir den Fehler nachvollziehen und die nächste Version verbessern.</p>
+<div class="download-card">
+<div>
+<div class="download-state">● FEHLERBERICHTE WILLKOMMEN</div>
+<strong>Hilf uns, Stremy zu verbessern.</strong>
+<p>Im Formular fragen wir nach deiner App-Version, deinem Gerät und den Schritten zum Nachstellen. Du kannst auch einen Screenshot ergänzen. Deine Meldung wird als öffentliches GitHub-Issue angelegt; dafür ist ein kostenloses GitHub-Konto erforderlich.</p>
+</div>
+<a class="btn primary" href="https://github.com/jeremonienmaster/Stremy-Website/issues/new?template=bug-report.yml" target="_blank" rel="noopener noreferrer">🐛 Bugreport öffnen ↗</a>
+</div>
+<p class="download-notice">Bitte keine Passwörter, Login-Tokens, Cookies oder persönlichen Daten in Fehlerberichte schreiben. <a href="https://github.com/jeremonienmaster/Stremy-Website/issues" rel="noopener noreferrer">Bereits gemeldete Fehler ansehen ↗</a></p>
+</section>
 <section class="block container" id="faq"><div style="text-align:center"><div class="tag">GUT ZU WISSEN</div><h2>Häufige <span>Fragen.</span></h2></div>
 <div class="faq">
 <details><summary>Was ist Stremy?</summary><p>Stremy ist ein unabhängiger Android-Client zum Ansehen von Twitch-Livestreams. Die App baut auf dem Open-Source-Projekt Twire auf und wird unter eigenem Namen weiterentwickelt.</p></details>
@@ -152,10 +166,11 @@ footer{border-top:1px solid var(--line);margin-top:70px;padding:35px 0 50px}.foo
 <details><summary>Wo finde ich den Quellcode?</summary><p>Der zur APK gehörende Quellcode steht gemäß GPL-3.0 als ZIP-Datei direkt neben dem APK-Download zur Verfügung. Die Entwicklungs-Historie bleibt privat.</p></details>
 <details><summary>Kann ich Stremy über eine ältere Beta installieren?</summary><p>Die offizielle App und die Beta besitzen unterschiedliche Android-Paketkennungen. Beide können nebeneinander bestehen; Daten und Einstellungen werden nicht automatisch übertragen.</p></details>
 <details><summary>Welche Daten nutzt Stremy?</summary><p>Zum Anzeigen und Interagieren mit Livestreams kommuniziert die App mit Twitch-Diensten. Bei aktivierter Fehlerberichterstattung können Diagnoseberichte an einen GlitchTip/Sentry-Endpunkt gesendet werden. Mehr dazu in den <a href="datenschutz.html">technischen Datenschutzhinweisen</a>. Diese Webseite enthält keine Tracking-Skripte. Zur Ermittlung der neuesten freigegebenen Version wird die öffentliche GitHub-Releases-API abgefragt.</p></details>
+<details><summary>Wie melde ich einen Fehler?</summary><p>Nutze unser <a href="https://github.com/jeremonienmaster/Stremy-Website/issues/new?template=bug-report.yml" rel="noopener noreferrer">Bugreport-Formular auf GitHub</a>. Dafür brauchst du ein GitHub-Konto. Der Bericht ist öffentlich sichtbar, deshalb bitte niemals Passwörter oder private Daten mitschicken.</p></details>
 <details><summary>Ist Stremy Open Source?</summary><p>Stremy basiert auf Twire und dessen GPL-3.0-lizenziertem Code. Der Quellcode zum Release und die Lizenzhinweise stehen <a id="stremy-source-faq" href="https://github.com/jeremonienmaster/Stremy-Website/releases/download/v1.1.0/Stremy-v1.1.0-source.zip">als GPL-3.0-Quellcodearchiv</a> bereit.</p></details>
 </div></section>
 </main>
-<footer><div class="footer-inner container"><div><strong>stremy<span style="color:var(--accent)">.</span> <span style="font-size:12px;color:var(--muted)">by JeryBeam</span></strong><p>Ein unabhängiges Community-Projekt. Nicht mit Twitch verbunden.</p></div><div class="footer-links"><a href="#download">Download</a><a href="#faq">FAQ</a><a href="datenschutz.html">Datenschutz</a><a href="https://www.gnu.org/licenses/gpl-3.0.html" rel="noopener noreferrer">GPL-3.0</a><a href="#top">Nach oben ↑</a></div></div></footer>
+<footer><div class="footer-inner container"><div><strong>stremy<span style="color:var(--accent)">.</span> <span style="font-size:12px;color:var(--muted)">by JeryBeam</span></strong><p>Ein unabhängiges Community-Projekt. Nicht mit Twitch verbunden.</p></div><div class="footer-links"><a href="#download">Download</a><a href="#feedback">Fehler melden</a><a href="#faq">FAQ</a><a href="datenschutz.html">Datenschutz</a><a href="https://www.gnu.org/licenses/gpl-3.0.html" rel="noopener noreferrer">GPL-3.0</a><a href="#top">Nach oben ↑</a></div></div></footer>
 <script>
 (()=>{'use strict';
 const root=document.documentElement;
