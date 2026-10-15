@@ -75,6 +75,8 @@ footer{border-top:1px solid var(--line);margin-top:70px;padding:35px 0 50px}.foo
 @media(max-width:930px){.hero{gap:10px}.phone-area{transform:scale(.87)}.navlinks{gap:18px}.feature-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:710px){nav.top{height:68px}.navlinks,.nav-cta{display:none}.mobile-menu{display:block}.mobilelinks{display:flex;flex-direction:column;padding:10px 20px 20px;gap:7px;border-top:1px solid var(--line)}.mobilelinks[hidden]{display:none}.mobilelinks a{text-decoration:none;padding:10px 0;color:var(--muted)}.hero{grid-template-columns:1fr;text-align:left;padding-top:56px;padding-bottom:35px;min-height:unset}.hero-copy>p{font-size:16px}h1{letter-spacing:-3.5px}.phone-area{min-height:560px;transform:scale(.83);margin:-25px -30px 0}.float-note.one{left:7%}.float-note.two{right:3%}.feature-grid{grid-template-columns:1fr}.feature.big{grid-column:span 1}.theme-layout{grid-template-columns:1fr;gap:45px;padding-block:70px}.theme-card{transform:rotate(2deg)}section.block{padding:70px 0}.download-card{flex-direction:column;align-items:start;padding:28px}.download-locked{white-space:normal}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+
+.history-intro{max-width:770px;color:var(--muted);font-size:16px;line-height:1.8}.history-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:30px}.history-step{padding:25px;border:1px solid var(--line);border-radius:20px;background:var(--panel)}.history-step time{display:block;color:var(--accent);font-size:12px;font-weight:800;letter-spacing:1px;margin-bottom:10px}.history-step h3{font-size:20px;margin:0 0 9px}.history-step p{margin:0;color:var(--muted);font-size:14px}.history-credit{margin-top:20px;padding:25px;border-radius:20px;border:1px solid var(--line);background:var(--panel2)}.history-credit p{color:var(--muted);margin-bottom:12px}.history-credit p:last-child{margin-bottom:0}@media(max-width:650px){.history-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -85,7 +87,7 @@ footer{border-top:1px solid var(--line);margin-top:70px;padding:35px 0 50px}.foo
 <svg viewBox="0 0 72 72" fill="none" aria-hidden="true"><path d="M30 38 15 66h42L42 38" fill="currentColor" opacity=".18"/><path d="m30 38-15 28m27-28 15 28" stroke="currentColor" stroke-width="2"/><ellipse cx="36" cy="32" rx="25" ry="10" fill="currentColor"/><path d="M23 31c1-13 7-19 13-19s12 6 13 19" fill="#0d1812" stroke="currentColor" stroke-width="2.7"/><ellipse cx="36" cy="32" rx="25" ry="10" stroke="#d8ffe8" stroke-width="2.7"/><circle cx="23" cy="33" r="2" fill="#092014"/><circle cx="36" cy="35" r="2" fill="#092014"/><circle cx="49" cy="33" r="2" fill="#092014"/></svg>
 <span><strong>stremy<em>.</em></strong><small>BY JERYBEAM</small></span>
 </a>
-<div class="navlinks"><a href="#features">Funktionen</a><a href="#themes">Design</a><a href="#download">Download</a><a href="#feedback">Fehler melden</a><a href="#faq">FAQ</a></div>
+<div class="navlinks"><a href="#features">Funktionen</a><a href="#geschichte">Geschichte</a><a href="#themes">Design</a><a href="#download">Download</a><a href="#geschichte">Geschichte</a><a href="#feedback">Fehler melden</a><a href="#faq">FAQ</a></div>
 <a class="nav-cta" href="#download">App entdecken ↗</a>
 <button class="mobile-menu" type="button" aria-controls="mobilelinks" aria-expanded="false">☰ <span class="sr-only">Menü</span></button>
 </nav>
@@ -156,6 +158,23 @@ footer{border-top:1px solid var(--line);margin-top:70px;padding:35px 0 50px}.foo
 <a class="btn primary" href="https://github.com/jeremonienmaster/Stremy-Website/issues/new?template=bug-report.yml" target="_blank" rel="noopener noreferrer">🐛 Bugreport öffnen ↗</a>
 </div>
 <p class="download-notice">Bitte keine Passwörter, Login-Tokens, Cookies oder persönlichen Daten in Fehlerberichte schreiben. <a href="https://github.com/jeremonienmaster/Stremy-Website/issues" rel="noopener noreferrer">Bereits gemeldete Fehler ansehen ↗</a></p>
+</section>
+<section class="block container" id="geschichte" aria-labelledby="geschichte-title">
+<div class="tag">UNSERE ENTWICKLUNG</div>
+<h2 id="geschichte-title">Aus einer Idee wurde <span>Stremy.</span></h2>
+<p class="history-intro">Stremy entstand nicht als komplett neu geschriebene App. Am Anfang stand <strong>Twire</strong>, ein freies Android-Projekt für Twitch. Daraus wurde durch viele kleine Experimente, Fehlersuchen und eigene Designentscheidungen ein persönlicher Fork – erst unter dem Arbeitsnamen StreamFree, später als Stremy. Hier erzählen wir offen, wie das Projekt gewachsen ist.</p>
+<div class="history-grid">
+<article class="history-step"><time>DER ANFANG · VOR OKTOBER 2026</time><h3>Eine Alternative zu Twitch</h3><p>Die Idee: ein eigener, schlanker Android-Client mit persönlichen Favoriten, einem angenehmen Player und einem Design, das sich wirklich nach den eigenen Vorlieben anfühlt. Twire lieferte die Open-Source-Grundlage.</p></article>
+<article class="history-step"><time>DIE ERSTEN VERSIONEN</time><h3>Aus StreamFree wird Stremy</h3><p>Ein eigener Name, ein neues Erscheinungsbild und viel Ausprobieren: dunkle Oberflächen, Grün und Rosa als Akzentfarben, Audio-Modus, Bild-in-Bild und ein aufgeräumteres Menü. Nicht jeder Versuch funktionierte sofort – Abstürze und Bedienfehler gehörten dazu.</p></article>
+<article class="history-step"><time>12.–14. OKTOBER 2026</time><h3>„Meine Streams“ im Mittelpunkt</h3><p>Die persönliche Stream-Übersicht wurde Schritt für Schritt verbessert: anpinnbare Kanäle, unterschiedliche Kartenansichten und getrennte Einstellungen. Parallel wurden Fehler behoben und Builds automatisiert.</p></article>
+<article class="history-step"><time>14. OKTOBER 2026</time><h3>Der erste öffentliche Auftritt</h3><p>Website, signierte APK, GPL-Quellcode und Prüfsummen wurden als nachvollziehbarer Veröffentlichungsweg vorbereitet. Das private Entwicklungsrepository blieb getrennt von den öffentlichen Downloads.</p></article>
+<article class="history-step"><time>15. OKTOBER 2026 · VERSION 1.1.1</time><h3>Updates direkt aus der App</h3><p>Ein Update-Checker mit In-App-Download, Fortschrittsanzeige und Sicherheitsprüfungen kam hinzu. Android behält dabei die Entscheidung über die Installation. Ein Upgrade auf dem Testgerät gelang ohne Verlust der Einstellungen.</p></article>
+<article class="history-step"><time>15. OKTOBER 2026 · VERSION 1.1.2</time><h3>Mehr Farbe, weniger Chaos</h3><p>Green Vibrant und Green Lime kamen dazu. Die Theme-Auswahl wurde neu sortiert und ältere Farbschemata blieben weiterhin zugänglich. Die signierte Version 1.1.2 wurde öffentlich bereitgestellt.</p></article>
+</div>
+<div class="history-credit"><h3>Ein Projekt von Mensch und KI</h3>
+<p><strong>Die Ideen, Prioritäten, Tests und Entscheidungen kommen vom Entwickler hinter JeryBeam.</strong> Bei der technischen Umsetzung spielt <strong>ChatGPT von OpenAI</strong> eine zentrale Rolle: als KI-Programmierpartner beim Verstehen des Twire-Codes, Schreiben von Patches, Analysieren von Fehlern und Vorbereiten von Builds und Releases. Ohne diese Zusammenarbeit wäre Stremy in dieser Form und in diesem Tempo nicht entstanden.</p>
+<p>Genauso wichtig ist die Vorarbeit der <strong>Twire-Entwicklerinnen und -Entwickler</strong>. Stremy ist eine Weiterentwicklung ihres Open-Source-Codes, keine von Grund auf neu erfundene Twitch-App. KI-generierte Änderungen werden nicht automatisch fehlerfrei: Builds, Sicherheitsprüfungen und Tests auf echten Geräten bleiben notwendig.</p>
+<p><strong>Zeitlicher Rahmen:</strong> Die hier dokumentierte intensive Entwicklungs- und Veröffentlichungsphase fand besonders vom 12. bis 15. Oktober 2026 statt. Eine exakte Zahl an Arbeitsstunden lässt sich daraus nicht seriös ableiten.</p></div>
 </section>
 <section class="block container" id="faq"><div style="text-align:center"><div class="tag">GUT ZU WISSEN</div><h2>Häufige <span>Fragen.</span></h2></div>
 <div class="faq">
