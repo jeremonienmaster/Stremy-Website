@@ -1,0 +1,69 @@
+name: Publish Stremy 1.1.8
+on:
+  push:
+    paths:
+      - ".github/workflows/publish-stremy-1.1.8.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    if: github.repository == 'jeremonienmaster/Stremy-Website'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Download independently verified signed build and GPL sources
+        shell: bash
+        env:
+          ASSETS_URL: "https://sdmntprnortheu.oaiusercontent.com/files/00000000-9fc8-81f4-90c4-3ec55242632c/raw?se=2026-10-28T23%3A27%3A23Z&sp=r&sv=2026-02-06&sr=b&scid=5ca6e72c-a17a-58e9-a9dc-d98b358be2ea&skoid=3804227d-1b52-417d-afd9-9ffbb50fa53e&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-28T06%3A20%3A45Z&ske=2026-10-29T06%3A20%3A45Z&sks=b&skv=2026-02-06&sig=mIIxVrlyo1GcC9TqrPgNyOV3qLF8J%2BSZudmV2v5vJjQ%3D"
+        run: |
+          set -euo pipefail
+          curl -fLsS --retry 2 --connect-timeout 10 --max-time 150 "$ASSETS_URL" -o assets.zip
+          test "$(wc -c < assets.zip)" -gt 16000000
+          mkdir dist
+          unzip -q assets.zip -d dist
+          test -s dist/Stremy-v1.1.8.apk
+          test -s dist/Stremy-v1.1.8-source.zip
+          test -s dist/SHA256SUMS.txt
+          cd dist
+          sha256sum --check SHA256SUMS.txt
+          printf '%s\n' '51fffab7af3b6710363d268e4225487513f00b26a730e53603676f3344ebf6e7  Stremy-v1.1.8.apk' | sha256sum --check -
+          printf '%s\n' '45088dcd9bf62b326fad6e07cb2e6d71dd403b98bc69d141f2b9a84e4b9a9d48  Stremy-v1.1.8-source.zip' | sha256sum --check -
+          unzip -p Stremy-v1.1.8-source.zip 'Stremy-v1.1.8-source/app/build.gradle.kts' | grep -F 'versionName = "1.1.8"'
+          unzip -p Stremy-v1.1.8-source.zip 'Stremy-v1.1.8-source/app/build.gradle.kts' | grep -F 'versionCode = 571'
+
+      - name: Publish latest stable release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: jeremonienmaster/Stremy-Website
+        run: |
+          set -euo pipefail
+          if gh release view v1.1.8 >/dev/null 2>&1; then
+            echo "::error::Release v1.1.8 already exists; refusing overwrite"
+            exit 1
+          fi
+          cat > release-notes.txt <<'NOTES'
+          Stremy 1.1.8 – Qualitätswahl und Live-Benachrichtigungen
+
+          - Die Qualitätsstufen des Twitch-Players werden zuverlässiger aus den HLS-Playlists ausgelesen und zugeordnet.
+          - Unter Meine Streams > Zahnrad lassen sich Live-Benachrichtigungen einschalten und Kanäle einzeln auswählen.
+          - Benachrichtigungen erscheinen pro Live-Session einmal und öffnen beim Antippen den Stream.
+          - Die Hintergrundprüfung verwendet Android WorkManager; sie erfolgt ungefähr alle 15 Minuten, abhängig von Androids Energiesparregeln. Sie ist kein Echtzeit-Push.
+          - Benachrichtigungen sind standardmäßig deaktiviert und benötigen auf Android 13+ die Freigabe.
+          - Bestehende App-Daten, Favoriten, Themes und Anmeldung bleiben bei einer regulären Aktualisierung erhalten.
+
+          Der Android-Build und die Unit-Tests wurden in GitHub Actions erfolgreich ausgeführt; die offizielle Release-Signatur wurde mit dem privaten Schlüssel abgeglichen. Ein vollständiger Praxistest auf allen Geräten ist nicht erfolgt.
+
+          Stremy kann über Einstellungen > Updates & Diagnose > Jetzt nach Updates suchen aktualisiert werden. Android fragt vor der Installation um Zustimmung.
+
+          Offiziell signierte Android-APK, überprüfte SHA-256-Prüfsummen und passender GPL-3.0-Quellcode. Stremy ist ein unabhängiger Fork von Twire und kein offizieller Twitch-Client.
+          NOTES
+          gh release create v1.1.8 \
+            dist/Stremy-v1.1.8.apk \
+            dist/Stremy-v1.1.8-source.zip \
+            dist/SHA256SUMS.txt \
+            --title "Stremy 1.1.8 – Qualität & Live-Benachrichtigungen" \
+            --notes-file release-notes.txt --latest
